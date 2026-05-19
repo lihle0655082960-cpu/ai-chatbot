@@ -1,0 +1,29 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["hi", "hello", "hey", "good day"],
+      "responses": ["Hello!", "Hi there!", "Hey!"]
+    },
+    {
+      "tag": "python",
+      "patterns": ["what is python", "python", "tell me about python"],
+      "responses": ["Python is a programming language used in AI and web development."]
+    },
+    {
+      "tag": "machine_learning",
+      "patterns": ["what is machine learning", "ml", "explain ml"],
+      "responses": ["Machine learning is a branch of AI that learns from data."]
+    },
+    {
+      "tag": "flask",
+      "patterns": ["what is flask", "flask", "flask framework"],
+      "responses": ["Flask is a lightweight Python web framework."]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["bye", "goodbye", "see you"],
+      "responses": ["Goodbye!", "See you later!", "Bye!"]
+    }
+  ]
+}
