@@ -2,27 +2,27 @@
   "intents": [
     {
       "tag": "greeting",
-      "patterns": ["hi", "hello", "hey", "good day"],
+      "patterns": ["hi", "hello", "hey", "good morning", "good day"],
       "responses": ["Hello!", "Hi there!", "Hey!"]
     },
     {
+      "tag": "how_are_you",
+      "patterns": ["how are you", "how are you doing", "are you fine", "how is it going"],
+      "responses": ["I'm doing great!", "I'm fine, thanks for asking!", "All good here!"]
+    },
+    {
       "tag": "python",
-      "patterns": ["what is python", "python", "tell me about python"],
-      "responses": ["Python is a programming language used in AI and web development."]
+      "patterns": ["what is python", "python", "tell me about python", "python language"],
+      "responses": ["Python is a programming language used for AI, ML, and web development."]
     },
     {
       "tag": "machine_learning",
-      "patterns": ["what is machine learning", "ml", "explain ml"],
-      "responses": ["Machine learning is a branch of AI that learns from data."]
-    },
-    {
-      "tag": "flask",
-      "patterns": ["what is flask", "flask", "flask framework"],
-      "responses": ["Flask is a lightweight Python web framework."]
+      "patterns": ["what is machine learning", "ml", "explain machine learning", "how does ml work"],
+      "responses": ["Machine learning is a branch of AI that learns patterns from data."]
     },
     {
       "tag": "goodbye",
-      "patterns": ["bye", "goodbye", "see you"],
+      "patterns": ["bye", "goodbye", "see you", "see you later", "talk to you later"],
       "responses": ["Goodbye!", "See you later!", "Bye!"]
     }
   ]
