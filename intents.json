@@ -2,27 +2,27 @@
   "intents": [
     {
       "tag": "greeting",
-      "patterns": ["hi", "hello", "hey", "good morning", "good day"],
-      "responses": ["Hello!", "Hi there!", "Hey!"]
+      "patterns": ["hi", "hello", "hey", "good morning", "good evening"],
+      "responses": ["Hello!", "Hi there!", "Hey! How can I help you?"]
     },
     {
       "tag": "how_are_you",
-      "patterns": ["how are you", "how are you doing", "are you fine", "how is it going"],
-      "responses": ["I'm doing great!", "I'm fine, thanks for asking!", "All good here!"]
+      "patterns": ["how are you", "how are you doing", "are you okay", "how is it going"],
+      "responses": ["I'm doing great!", "All good here!", "I'm fine, thanks!"]
     },
     {
       "tag": "python",
-      "patterns": ["what is python", "python", "tell me about python", "python language"],
-      "responses": ["Python is a programming language used for AI, ML, and web development."]
+      "patterns": ["what is python", "python language", "tell me about python", "explain python"],
+      "responses": ["Python is a powerful programming language used for AI, ML, and web development."]
     },
     {
       "tag": "machine_learning",
-      "patterns": ["what is machine learning", "ml", "explain machine learning", "how does ml work"],
-      "responses": ["Machine learning is a branch of AI that learns patterns from data."]
+      "patterns": ["what is machine learning", "machine learning", "ml", "explain ml", "how does ml work"],
+      "responses": ["Machine learning is a branch of AI where systems learn from data."]
     },
     {
       "tag": "goodbye",
-      "patterns": ["bye", "goodbye", "see you", "see you later", "talk to you later"],
+      "patterns": ["bye", "goodbye", "see you", "talk later"],
       "responses": ["Goodbye!", "See you later!", "Bye!"]
     }
   ]

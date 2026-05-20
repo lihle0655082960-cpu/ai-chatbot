@@ -7,7 +7,7 @@ from sklearn.linear_model import LogisticRegression
 
 app = Flask(__name__)
 
-# Load intents
+# Load dataset
 with open("intents.json", "r", encoding="utf-8") as file:
     data = json.load(file)
 
@@ -20,12 +20,16 @@ for intent in data["intents"]:
         texts.append(pattern.lower())
         labels.append(intent["tag"])
 
-# TF-IDF (better settings for accuracy)
-vectorizer = TfidfVectorizer(ngram_range=(1, 2))
+# IMPROVED TF-IDF (VERY IMPORTANT FIX)
+vectorizer = TfidfVectorizer(
+    ngram_range=(1, 2),
+    stop_words="english"
+)
+
 X = vectorizer.fit_transform(texts)
 
-# Better ML model (more stable than default)
-model = LogisticRegression(max_iter=2000)
+# Stronger model
+model = LogisticRegression(max_iter=3000)
 model.fit(X, labels)
 
 
@@ -34,21 +38,14 @@ def get_response(user_input):
 
     input_data = vectorizer.transform([user_input])
 
-    probabilities = model.predict_proba(input_data)[0]
-    best_index = probabilities.argmax()
-    confidence = probabilities[best_index]
+    prediction = model.predict(input_data)[0]
 
-    predicted_tag = model.classes_[best_index]
-
-    # Confidence check (VERY IMPORTANT FIX)
-    if confidence < 0.4:
-        return "Sorry, I didn't understand that. Try asking differently."
-
+    # Get matching response
     for intent in data["intents"]:
-        if intent["tag"] == predicted_tag:
+        if intent["tag"] == prediction:
             return random.choice(intent["responses"])
 
-    return "Sorry, I don't understand."
+    return "Sorry, I didn't understand that."
 
 
 @app.route("/")
