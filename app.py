@@ -7,7 +7,7 @@ from sklearn.linear_model import LogisticRegression
 
 app = Flask(__name__)
 
-# Load dataset
+# Load intents
 with open("intents.json", "r", encoding="utf-8") as file:
     data = json.load(file)
 
@@ -20,29 +20,35 @@ for intent in data["intents"]:
         texts.append(pattern.lower())
         labels.append(intent["tag"])
 
-# IMPROVED TF-IDF (VERY IMPORTANT FIX)
+# Convert text to numerical features
 vectorizer = TfidfVectorizer(
-    ngram_range=(1, 2),
-    stop_words="english"
+    lowercase=True,
+    ngram_range=(1, 2)
 )
 
 X = vectorizer.fit_transform(texts)
 
-# Stronger model
-model = LogisticRegression(max_iter=3000)
+# Train model
+model = LogisticRegression(
+    max_iter=5000,
+    random_state=42
+)
+
 model.fit(X, labels)
 
 
 def get_response(user_input):
-    user_input = user_input.lower()
 
-    input_data = vectorizer.transform([user_input])
+    user_input = user_input.lower().strip()
 
-    prediction = model.predict(input_data)[0]
+    X_test = vectorizer.transform([user_input])
 
-    # Get matching response
+    prediction = model.predict(X_test)[0]
+
     for intent in data["intents"]:
+
         if intent["tag"] == prediction:
+
             return random.choice(intent["responses"])
 
     return "Sorry, I didn't understand that."
@@ -55,9 +61,14 @@ def home():
 
 @app.route("/get_response", methods=["POST"])
 def chat():
-    user_message = request.json["message"]
+
+    user_message = request.json.get("message", "")
+
     response = get_response(user_message)
-    return jsonify({"response": response})
+
+    return jsonify({
+        "response": response
+    })
 
 
 if __name__ == "__main__":

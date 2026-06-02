@@ -2,28 +2,178 @@
   "intents": [
     {
       "tag": "greeting",
-      "patterns": ["hi", "hello", "hey", "good morning", "good evening"],
-      "responses": ["Hello!", "Hi there!", "Hey! How can I help you?"]
+      "patterns": [
+        "hi",
+        "hello",
+        "hey",
+        "good morning",
+        "good afternoon",
+        "good evening",
+        "howdy"
+      ],
+      "responses": [
+        "Hello!",
+        "Hi there!",
+        "Hey! How can I help you?"
+      ]
     },
+
     {
       "tag": "how_are_you",
-      "patterns": ["how are you", "how are you doing", "are you okay", "how is it going"],
-      "responses": ["I'm doing great!", "All good here!", "I'm fine, thanks!"]
+      "patterns": [
+        "how are you",
+        "how are you doing",
+        "how is it going",
+        "are you okay",
+        "how have you been",
+        "are you fine"
+      ],
+      "responses": [
+        "I'm doing great!",
+        "All good here!",
+        "I'm fine, thanks for asking!"
+      ]
     },
+
     {
       "tag": "python",
-      "patterns": ["what is python", "python language", "tell me about python", "explain python"],
-      "responses": ["Python is a powerful programming language used for AI, ML, and web development."]
+      "patterns": [
+        "what is python",
+        "tell me about python",
+        "python language",
+        "explain python",
+        "what can python do",
+        "why learn python",
+        "python programming"
+      ],
+      "responses": [
+        "Python is a powerful programming language used for AI, machine learning, data science, automation, and web development."
+      ]
     },
+
     {
       "tag": "machine_learning",
-      "patterns": ["what is machine learning", "machine learning", "ml", "explain ml", "how does ml work"],
-      "responses": ["Machine learning is a branch of AI where systems learn from data."]
+      "patterns": [
+        "what is machine learning",
+        "machine learning",
+        "explain machine learning",
+        "how does machine learning work",
+        "what is ml",
+        "tell me about machine learning"
+      ],
+      "responses": [
+        "Machine learning is a branch of AI that learns patterns from data and makes predictions."
+      ]
     },
+
+    {
+      "tag": "artificial_intelligence",
+      "patterns": [
+        "what is ai",
+        "what is artificial intelligence",
+        "tell me about ai",
+        "explain ai",
+        "ai meaning",
+        "define artificial intelligence"
+      ],
+      "responses": [
+        "Artificial Intelligence is the field of creating systems that can perform tasks that normally require human intelligence."
+      ]
+    },
+
+    {
+      "tag": "internships",
+      "patterns": [
+        "how do i get an internship",
+        "how do i get internships",
+        "internship advice",
+        "how to find internships",
+        "where can i find internships",
+        "help me get a job",
+        "job search tips",
+        "looking for internships",
+        "how can i gain experience",
+        "how can i get work experience"
+      ],
+      "responses": [
+        "Build projects, create a GitHub portfolio, improve your CV, and apply consistently to internships."
+      ]
+    },
+
+    {
+      "tag": "cv",
+      "patterns": [
+        "how do i write a cv",
+        "help with cv",
+        "resume tips",
+        "how to improve my resume",
+        "cv advice",
+        "create a cv",
+        "how to write a resume"
+      ],
+      "responses": [
+        "Keep your CV concise and include your skills, projects, education, and GitHub profile."
+      ]
+    },
+
+    {
+      "tag": "interview",
+      "patterns": [
+        "interview tips",
+        "how do i prepare for an interview",
+        "job interview",
+        "technical interview",
+        "interview preparation",
+        "how to pass an interview"
+      ],
+      "responses": [
+        "Practice common interview questions, review your projects, and be ready to explain your problem-solving process."
+      ]
+    },
+
+    {
+      "tag": "data_science",
+      "patterns": [
+        "what is data science",
+        "explain data science",
+        "data scientist",
+        "career in data science",
+        "tell me about data science"
+      ],
+      "responses": [
+        "Data science combines statistics, programming, and domain knowledge to extract insights from data."
+      ]
+    },
+
+    {
+      "tag": "projects",
+      "patterns": [
+        "project ideas",
+        "machine learning projects",
+        "python projects",
+        "portfolio projects",
+        "what project should i build",
+        "give me project ideas"
+      ],
+      "responses": [
+        "Good portfolio projects include house price prediction, spam detection, customer churn prediction, chatbots, and image classification."
+      ]
+    },
+
     {
       "tag": "goodbye",
-      "patterns": ["bye", "goodbye", "see you", "talk later"],
-      "responses": ["Goodbye!", "See you later!", "Bye!"]
+      "patterns": [
+        "bye",
+        "goodbye",
+        "see you later",
+        "talk to you later",
+        "farewell"
+      ],
+      "responses": [
+        "Goodbye!",
+        "See you later!",
+        "Bye!"
+      ]
     }
   ]
 }
